@@ -1,0 +1,25 @@
+<h2>Lista de Empleados</h2>
+
+<button (click)="createEmpleado()">Agregar Empleado</button>
+
+<table border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Cargo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{ empleado.employeeId }}</td>
+      <td>{{ empleado.firstName }} {{ empleado.lastName }}</td>
+      <td>{{ empleado.title }}</td>
+      <td>
+        <button (click)="editEmpleado(empleado.employeeId)">Editar</button>
+        <button (click)="deleteEmpleado(empleado.employeeId)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

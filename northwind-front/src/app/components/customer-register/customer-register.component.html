@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Listado de Clientes</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Contact Title</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (customer of customers; track $index) {
+         <tr>
+        <td>{{ customer.customerId }}</td>
+        <td>{{ customer.companyName }}</td>
+        <td>{{ customer.contactName }}</td>
+        <td>{{ customer.contactTitle }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.city }}</td>
+        <td>{{ customer.country }}</td>
+        <td>{{ customer.phone }}</td>
+      </tr>
+
+      }
+     
+    </tbody>
+  </table>
+</div>

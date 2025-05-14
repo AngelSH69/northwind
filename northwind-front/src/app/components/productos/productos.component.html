@@ -1,0 +1,30 @@
+<h2>Lista de Productos</h2>
+
+<!-- Botón de ejemplo para crear producto -->
+<!--button (click)="crearProducto()">Agregar Producto</button-->
+
+<table border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <!-- <th>Acciones</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.productId }}</td>
+      <td>{{ producto.productName }}</td>
+      <td>{{ producto.unitPrice }}</td>
+      <td>{{ producto.unitsInStock }}</td>
+      <!--
+      <td>
+        <button (click)="editarProducto(producto.productId)">Editar</button>
+        <button (click)="eliminarProducto(producto.productId)">Eliminar</button>
+      </td>
+      -->
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+<h2>{{ isEdit ? 'Editar' : 'Agregar' }} Empleado</h2>
+
+<form [formGroup]="empleadoForm" (ngSubmit)="guardarEmpleado()">
+  <label>Nombre:</label><br>
+  <input type="text" formControlName="nombre" required /><br><br>
+
+  <label>Cargo / Posición:</label><br>
+  <input type="text" formControlName="posicion" required /><br><br>
+
+  <button type="submit">Guardar</button>
+  <button type="button" (click)="cancelar()">Cancelar</button>
+</form>
