@@ -1,6 +1,7 @@
 package com.precticauno.spring.app1.springboot_aplication.controllers;
 
 import com.precticauno.spring.app1.springboot_aplication.models.Employee;
+import com.precticauno.spring.app1.springboot_aplication.models.dto.EmployeeUpdateDTO;
 import com.precticauno.spring.app1.springboot_aplication.servicios.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,16 +36,23 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Short id, @RequestBody Employee employee) {
-        Optional<Employee> existingEmployee = employeeService.getEmployeeById(id);
-        if (existingEmployee.isPresent()) {
-            employee.setEmployeeId(id);
-            Employee updatedEmployee = employeeService.saveEmployee(employee);
-            return ResponseEntity.ok(updatedEmployee);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+public ResponseEntity<Employee> updateEmployee(@PathVariable Short id, @RequestBody EmployeeUpdateDTO dto) {
+    Optional<Employee> existingEmployee = employeeService.getEmployeeById(id);
+
+    if (existingEmployee.isPresent()) {
+        Employee employee = existingEmployee.get();
+
+        // Solo se actualizan los campos que vienen en el DTO
+        if (dto.getFirstName() != null) employee.setFirstName(dto.getFirstName());
+        if (dto.getTitle() != null) employee.setTitle(dto.getTitle());
+
+        Employee updatedEmployee = employeeService.saveEmployee(employee);
+        return ResponseEntity.ok(updatedEmployee);
+    } else {
+        return ResponseEntity.notFound().build();
     }
+}
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Short id) {

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { NorthwindService } from '../../services/northwind.service';
 
+
 @Component({
   selector: 'app-editar-empleado',
   standalone: true,
@@ -27,7 +28,7 @@ export class EditarEmpleadoComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.empleadoForm = this.fb.group({
-      employeId: [''],
+      firstName: [''],
       title: ['']
       
     });
@@ -41,10 +42,11 @@ export class EditarEmpleadoComponent implements OnInit {
     if (this.isEdit) {
       this.service.getEmpleado(this.idEmpleado).subscribe((data:any) => {
         console.log(data.firstName);
-        this.empleadoForm.patchValue(
-          nombre = data.firstName;
-          posicion =
-        )
+        this.empleadoForm.patchValue({
+          firstName: data.firstName,
+          title: data.title
+ 
+        })
       });
     }
   }

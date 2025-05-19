@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
-import { EditarEmpleadoComponent } from './components/editar-empleado/editar-empleado.component';
+
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
 //import { CustomerRegisterComponent } from './components/customer-register/customer-register.component';
@@ -18,7 +18,7 @@ import { EditarClienteComponent } from './components/editar-cliente/editar-clien
     AppComponent,
     ClientesComponent,
     EditarProductoComponent,
-    
+     
     EditarClienteComponent
     
   ],
@@ -29,7 +29,6 @@ import { EditarClienteComponent } from './components/editar-cliente/editar-clien
     ReactiveFormsModule,  
     HttpClientModule,  
     EmpleadosComponent,
-    EditarEmpleadoComponent,
     ProductosComponent
     //CustomerRegisterComponent
   ],

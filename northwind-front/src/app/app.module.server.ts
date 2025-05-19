@@ -6,6 +6,9 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { EditarEmpleadoComponent } from './components/editar-empleado/editar-empleado.component';
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/empleados', pathMatch: 'full' },

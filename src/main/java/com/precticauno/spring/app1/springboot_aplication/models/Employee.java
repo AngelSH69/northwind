@@ -27,8 +27,8 @@ public class Employee {
     private String homePhone;
     private String extension;
 
-    @Lob
-    private byte[] photo;
+    //@Lob
+    //private byte[] photo;
 
     @Column(columnDefinition = "text")
     private String notes;

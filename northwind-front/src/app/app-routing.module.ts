@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: '', redirectTo: 'productos', pathMatch: 'full' },
  { path: 'customer-register', component: CustomerRegisterComponent },
+ { path: 'editar-empleado/:id', loadComponent: () => import('./components/editar-empleado/editar-empleado.component').then(m => m.EditarEmpleadoComponent) },
 ];
 
 @NgModule({
